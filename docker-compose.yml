@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  rag_api:
+    build: .
+    ports:
+      - "7000:7000"
+    env_file:
+      - .env
+    volumes:
+      - ./indices:/app/indices
+    restart: unless-stopped
